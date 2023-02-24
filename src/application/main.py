@@ -14,7 +14,7 @@ def main():
     model.player_1_name = service.return_player_name()
     model.player1 = service.return_team_gold()
     print(model)
-    print(model.player_1_name)
+    print(model.player_1_name, model.get_all_players())
 
 
 if __name__ == "__main__":
