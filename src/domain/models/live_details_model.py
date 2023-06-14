@@ -1,6 +1,7 @@
 from dataclasses import dataclass, field
 from src.data.apis.api_json_parser import DataClassUnpack
 
+
 @dataclass
 class LiveDetailsParticipant(DataClassUnpack):
     participantId: str
@@ -24,6 +25,8 @@ class LiveDetailsParticipant(DataClassUnpack):
     tenacity: str
     items: list[str]
     abilities: list[str]
+
+
 @dataclass
 class LiveDetailsModel(DataClassUnpack):
     frames: str

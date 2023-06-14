@@ -9,7 +9,3 @@ class ChampionBaseModel(DataClassUnpack):
     format: str
     version: str
     data: str
-
-
-
-
