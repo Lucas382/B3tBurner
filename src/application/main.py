@@ -7,6 +7,8 @@ def main():
 
     api_url = "https://feed.lolesports.com/livestats/v1/window/109625152897792292?hl=pt-BR&startingTime=2023-02-18T10:55:30.000Z"
     live_url = "https://feed.lolesports.com/livestats/v1/details/109539822194338807?hl=pt-BR&startingTime=2023-02-27T17:18:40.000Z"
+    live_games_url = "https://esports-api.lolesports.com/persisted/gw/getLive?hl=pt-BR"
+    schedule_games_lpl_url = "https://esports-api.lolesports.com/persisted/gw/getSchedule?hl=pt-BR"
 
     live_status = LiveDetailsModel.instantiate(LiveDetailsModel.get_json(live_url))
     participant = LiveDetailsParticipant.instantiate(live_status.frames[0]['participants'][0])
