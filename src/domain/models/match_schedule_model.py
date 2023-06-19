@@ -1,16 +1,15 @@
 from dataclasses import dataclass
 from typing import List
-from src.data.apis.api_json_parser import DataClassUnpack
 
 
 @dataclass
-class Record(DataClassUnpack):
+class Record:
     wins: int
     losses: int
 
 
 @dataclass
-class Team(DataClassUnpack):
+class Team:
     name: str
     code: str
     image: str
@@ -22,19 +21,19 @@ class Team(DataClassUnpack):
 
 
 @dataclass
-class League(DataClassUnpack):
+class League:
     name: str
     slug: str
 
 
 @dataclass
-class Strategy(DataClassUnpack):
+class Strategy:
     type: str
     count: int
 
 
 @dataclass
-class Match(DataClassUnpack):
+class Match:
     id: str
     flags: List[str]
     teams: List[Team]
@@ -45,7 +44,7 @@ class Match(DataClassUnpack):
 
 
 @dataclass
-class ScheduleItem(DataClassUnpack):
+class ScheduleItem:
     startTime: str
     state: str
     type: str
