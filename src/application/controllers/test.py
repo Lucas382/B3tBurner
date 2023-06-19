@@ -1,35 +1,38 @@
-import json
-import requests
-from src.domain.models.match_schedule_model import ScheduleItem
+from src.infrastructure.data.repositories.team_gold_repository import TeamGoldRepository
+from src.infrastructure.data.repositories.team_gold_repository2 import TeamGoldRepository2
+from src.domain.protocols.team_gold_protocol import TeamGoldProtocol
 
 
-with open('../../../config.json', 'r') as f:
-    config = json.load(f)
+def print_team_info(team: TeamGoldProtocol) -> None:
+    player_name = team.get_player_name()
+    team_gold = team.get_team_gold()
 
-api_key = config['api_key']
+    print(f"Player name: {player_name}")
+    print(f"Team gold: {team_gold}")
 
-url = 'https://esports-api.lolesports.com/persisted/gw/getSchedule?hl=pt-BR'
-headers = {
-    'authority': 'esports-api.lolesports.com',
-    'accept': 'application/json, text/plain, */*',
-    'accept-encoding': 'gzip, deflate, br',
-    'accept-language': 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7',
-    'cache-control': 'no-cache',
-    'origin': 'empty',
-    'pragma': 'no-cache',
-    'referer': 'empty',
-    'sec-ch-ua': '"Chromium";v="112", "Not_A Brand";v="24", "Opera GX";v="98"',
-    'sec-ch-ua-mobile': '?0',
-    'sec-ch-ua-platform': '"Windows"',
-    'sec-fetch-dest': 'empty',
-    'sec-fetch-mode': 'cors',
-    'sec-fetch-site': 'cross-site',
-    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 OPR/98.0.0.0',
-    'x-api-key': api_key
 
-}
+repository = TeamGoldRepository()
+repository2 = TeamGoldRepository2()
+print_team_info(repository2)
 
-# response = requests.get(url, headers=headers)
+# now = datetime.utcnow()
+# rounded_seconds = (now.second // 10) * 10
+# rounded_time = now.replace(second=rounded_seconds, microsecond=0)
+# iso_timestamp = rounded_time.isoformat() + "Z"
+#
+# with open('../../../config.json', 'r') as f:
+#     config = json.load(f)
+# API_HEADERS = config['api_headers']
+#
+# url = 'https://esports-api.lolesports.com/persisted/gw/getSchedule?hl=pt-BR'
+#
+#
+# def string_to_date(date: str) -> datetime:
+#     return datetime.strptime(date, '%Y-%m-%dT%H:%M:%SZ')
+#
+
+
+# response = requests.get(url, headers=API_HEADERS)
 #
 #
 # if response.status_code == 200:
@@ -40,16 +43,21 @@ headers = {
 # else:
 #     print('Erro na solicitação:', response.status_code)
 
-matchs = []
-with open('result.json', 'r') as file:
-    data = json.load(file)
-    for event in data['data']['schedule']['events']:
-        if event['league']['name'] == 'LPL':
-            match = ScheduleItem(**event)
-            matchs.append(match)
-
-games = []
-for match in matchs:
-    if match.state == 'unstarted':
-        print(match.match.teams[0].record)
+# matchs = []
+# with open('result.json', 'r') as file:
+#     data = json.load(file)
+#
+# for event in data['data']['schedule']['events']:
+#     if event['league']['name'] == 'LPL':
+#         match = ScheduleItem(**event)
+#         matchs.append(match)
+#
+# games = []
+# for match in matchs:
+#     if match.state == 'unstarted':
+#         datetime_obj = string_to_date(iso_timestamp)
+#         startTime = string_to_date(match.startTime)
+#
+#         if startTime.date() == datetime_obj.date():
+#             print(match.match.teams[0].name, " Vs ", match.match.teams[1].name, " dia ",startTime.date().day, "as", startTime.time().hour)
 
