@@ -6,9 +6,9 @@ presente na partida.
 
 ## Metas
 
- - [x] Coleta de dados uma determinada partida.
- - [X] Coleta de dados de um Personagem.
- - [ ] Coleta de quais partidas acontecerão no dia.
+ - &#9745 Coleta de dados uma determinada partida.
+ - :white_check_mark Coleta de dados de um Personagem.
+ - :white_large_square Coleta de quais partidas acontecerão no dia.
  - [ ] Informações de desempenho de um determinado jogador no campeonato.
  - [ ] Comparação de potencial de dano de um determinado time com relação a outro para a partida.
  - [ ] Interface para selecinar uma partida Ao Vivo.
