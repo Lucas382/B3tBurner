@@ -6,13 +6,13 @@ presente na partida.
 
 ## Metas
 
-:white_check_mark: Coleta de dados uma determinada partida.
-:white_check_mark: Coleta de dados de um Personagem.
-:white_large_square: Coleta de quais partidas acontecerão no dia.
-:white_large_square:  Informações de desempenho de um determinado jogador no campeonato.
-:white_large_square:  Comparação de potencial de dano de um determinado time com relação a outro para a partida.
-:white_large_square:  Interface para selecinar uma partida Ao Vivo.
-:white_large_square:  Interface para ver as informações sobre o jogo.
+:white_check_mark: Coleta de dados uma determinada partida.<br>
+:white_check_mark: Coleta de dados de um Personagem.<br>
+:white_large_square: Coleta de quais partidas acontecerão no dia.<br>
+:white_large_square:  Informações de desempenho de um determinado jogador no campeonato.<br>
+:white_large_square:  Comparação de potencial de dano de um determinado time com relação a outro para a partida.<br>
+:white_large_square:  Interface para selecinar uma partida Ao Vivo.<br>
+:white_large_square:  Interface para ver as informações sobre o jogo.<br>
 
 
 ## Disclaimer
