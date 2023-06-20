@@ -1,8 +1,12 @@
 from src.domain.protocols.champion_service_protocol import ChampionServiceProtocol
 from src.domain.models.live_details_model import LiveDetailsModel, LiveDetailsParticipantModel
 from src.domain.models.live_stats_model import LiveStatusModel
+from src.domain.protocols.live_details_protocol import LiveDetailsServiceProtocol
 from src.domain.services.champion_service import ChampionService
 import requests
+
+from src.domain.services.live_details_service import LiveDetailsService
+
 
 def main():
 
@@ -13,15 +17,19 @@ def main():
 
     live_status = LiveDetailsModel(**requests.get(live_url).json())
     participant = LiveDetailsParticipantModel(**live_status.frames[0]['participants'][0])
-
     model = LiveStatusModel(**requests.get(api_url).json())
     names = model.get_champions_red_team
 
     champion_service_protocol: ChampionServiceProtocol = ChampionService()
-    champion_info_list = champion_service_protocol.get_champion_information_list(names)
+    live_details_service_protocol: LiveDetailsServiceProtocol = LiveDetailsService()
 
-    for champ in champion_info_list:
-        print(f"O Q effect de {champ.id} é {champ.spell_r.effect[1]}")
+    details = live_details_service_protocol.get_today_matches_by_league('lpl')
+
+
+    # champion_info_list = champion_service_protocol.get_champion_information_list(names)
+    #
+    # for champ in champion_info_list:
+    #     print(f"O Q effect de {champ.id} é {champ.spell_r.effect[1]}")
 
 
 if __name__ == "__main__":
