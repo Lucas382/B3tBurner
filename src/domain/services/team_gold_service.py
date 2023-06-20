@@ -1,4 +1,4 @@
-from src.domain.interfaces.team_gold_interface import TeamGoldInterface
+from src.domain.protocols.team_gold_protocol import TeamGoldInterface
 
 
 class GoldDealer:

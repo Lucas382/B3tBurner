@@ -1,10 +1,8 @@
-import json
-from dataclasses import dataclass, field
-from src.data.apis.api_json_parser import DataClassUnpack
+from dataclasses import dataclass
 
 
 @dataclass
-class ChampionBaseModel(DataClassUnpack):
+class ChampionBaseModel:
     type: str
     format: str
     version: str

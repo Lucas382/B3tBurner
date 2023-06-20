@@ -1,7 +1,5 @@
-from src.domain.interfaces.team_gold_interface import TeamGoldInterface
 
-
-class TeamGoldRepository2(TeamGoldInterface):
+class TeamGoldRepository2:
 
     def get_player_name(self):
         player_name: str = "Carlos"

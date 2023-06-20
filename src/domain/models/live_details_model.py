@@ -1,9 +1,14 @@
-from dataclasses import dataclass, field
-from src.data.apis.api_json_parser import DataClassUnpack
-
+from dataclasses import dataclass
+from typing import List
 
 @dataclass
-class LiveDetailsParticipant(DataClassUnpack):
+class PerkMetadata:
+    styleId: int
+    subStyleId: int
+    perks: List[int]
+
+@dataclass
+class LiveDetailsParticipantModel:
     participantId: str
     level: str
     kills: str
@@ -23,11 +28,15 @@ class LiveDetailsParticipant(DataClassUnpack):
     armor: str
     magicResistance: str
     tenacity: str
-    items: list[str]
-    abilities: list[str]
+    items: List[str]
+    perkMetadata: PerkMetadata
+    abilities: List[str]
+
+    def __post_init__(self):
+        self.perkMetadata = PerkMetadata(**self.perkMetadata)
 
 
 @dataclass
-class LiveDetailsModel(DataClassUnpack):
+class LiveDetailsModel:
     frames: str
 
