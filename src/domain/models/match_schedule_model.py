@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, fields
 from typing import List
 
 
@@ -44,7 +44,7 @@ class Match:
 
 
 @dataclass
-class ScheduleItem:
+class MatchScheduleModel:
     startTime: str
     state: str
     type: str
@@ -55,3 +55,7 @@ class ScheduleItem:
     def __post_init__(self):
         self.league = League(**self.league)
         self.match = Match(**self.match)
+
+    @classmethod
+    def get_all_attrs_names(cls) -> list:
+        return [field.name for field in fields(cls)]
