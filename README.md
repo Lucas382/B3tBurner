@@ -16,7 +16,7 @@ This project is being developed based on the principles of Domain Driven Design 
 
 The use of the DDD model allows the code to be organized into different layers, such as the domain, application, and infrastructure layers, which facilitates project maintenance and scalability. Additionally, the use of patterns like Dependency Injection and Dependency Inversion helps reduce coupling between classes and promotes code reusability.
 
-It is important to note that this project is a personal initiative for learning and professional improvement. The code and structure presented here may not always represent the best practices, and it is recommended to analyze and adapt these techniques according to the specific needs of each project.
+It is important to note that this project is a personal initiative for learning and professional improvement. The code and structure presented here may not always represent the best practices in all cases, and it is recommended to analyze and adapt these techniques according to the specific needs of each project.
 
 ## Topics covered in the project:
 
