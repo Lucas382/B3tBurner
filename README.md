@@ -16,7 +16,7 @@ presente na partida.
 
 
 ## Disclaimer
-  Este projeto foi desenvolvido com base na arquitetura de projeto Domain Driven Design (DDD) e utiliza padrões como Injeção de Dependência (Dependency Injection) e Inversão de Dependência (Dependency Inversion). O objetivo principal é aprimorar o entendimento sobre tópicos avançados no desenvolvimento de software.
+  Este projeto está sendo desenvolvido com base na arquitetura de projeto Domain Driven Design (DDD) e utiliza padrões como Injeção de Dependência (Dependency Injection) e Inversão de Dependência (Dependency Inversion). O objetivo principal é aprimorar o entendimento sobre tópicos avançados no desenvolvimento de software.
 
   O uso do modelo DDD permite organizar o código em diferentes camadas, como a camada de domínio, aplicação e infraestrutura, facilitando a manutenção e escalabilidade do projeto. Além disso, a utilização de padrões como Injeção de Dependência e Inversão de Dependência ajuda a reduzir o acoplamento entre as classes e promove a reutilização de código.
 
