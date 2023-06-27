@@ -33,3 +33,4 @@ presente na partida.
   - Domain Driven Design (DDD)
   - Interfaces
   - Repositories
+  - Functional Programming
