@@ -1,18 +1,49 @@
 # B3tBurner
- 
-Atualmente obtem dados da API do lolesports sobre uma determinada partida
-e dinâmicamente com a API fornecida pela Riot Games coleta dados de cada personagem
-presente na partida.
+
+## EN_US -------------------------------------------------------------------------------------------------------------------------
+
+Goals:
+:white_check_mark: Data collection for a specific match.
+:white_check_mark: Data collection for a character.
+:white_check_mark: Collection of matches happening on a given day.
+:white_check_mark: Collection of performance information for a specific player.
+:white_large_square: Comparison of damage potential between a specific team and another for the match.
+:white_large_square: Interface to select a live match.
+:white_large_square: Interface to view game information.
+
+Disclaimer:
+This project is being developed based on the principles of Domain Driven Design (DDD) project architecture and utilizes patterns such as Dependency Injection and Dependency Inversion. The primary objective is to enhance understanding of advanced topics in software development.
+
+The use of the DDD model allows the code to be organized into different layers, such as the domain, application, and infrastructure layers, which facilitates project maintenance and scalability. Additionally, the use of patterns like Dependency Injection and Dependency Inversion helps reduce coupling between classes and promotes code reusability.
+
+It is important to note that this project is a personal initiative for learning and professional improvement. The code and structure presented here may not always represent the best practices, and it is recommended to analyze and adapt these techniques according to the specific needs of each project.
+
+Topics covered in the project:
+
+Object-Oriented Programming (OOP)
+DataClasses
+REST API
+Web Scraping
+Dependency Injection
+Dependency Inversion
+Kivy Language (KvLang)
+Domain Driven Design (DDD)
+Interfaces
+Repositories
+Functional Programming
+
+
+## PT_BR -------------------------------------------------------------------------------------------------------------------------
 
 ## Metas
 
 :white_check_mark: Coleta de dados uma determinada partida.<br>
 :white_check_mark: Coleta de dados de um Personagem.<br>
 :white_check_mark: Coleta de quais partidas acontecerão no dia.<br>
-:white_check_mark: Coleta de informações de desempenho de um determinado jogador no campeonato.<br>
-:white_large_square:  Comparação de potencial de dano de um determinado time com relação a outro para a partida.<br>
-:white_large_square:  Interface para selecinar uma partida Ao Vivo.<br>
-:white_large_square:  Interface para ver as informações sobre o jogo.<br>
+:white_check_mark: Coleta de informações de desempenho de um determinado jogador.<br>
+:white_large_square: Comparação de potencial de dano de um determinado time com relação a outro para a partida.<br>
+:white_large_square: Interface para selecinar uma partida Ao Vivo.<br>
+:white_large_square: Interface para ver as informações sobre o jogo.<br>
 
 
 ## Disclaimer
@@ -26,11 +57,11 @@ presente na partida.
   - Programação Orientada a Objeto (POO)
   - DataClasses
   - API REST
-  - Web Scraping
+  - Raspagem de dados
   - Injeção de Dependência (Dependency Injection)
   - Inversão de Dependência (Dependency Inversion)
-  - Kivy Language (KvLang)
+  - Linguagem Kivy (KvLang)
   - Domain Driven Design (DDD)
   - Interfaces
-  - Repositories
-  - Functional Programming
+  - Repositorios
+  - Programação Funcional
