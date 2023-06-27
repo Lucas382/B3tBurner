@@ -32,7 +32,7 @@ It is important to note that this project is a personal initiative for learning 
 - Repositories
 - Functional Programming
 
-# B3tBurner
+___
 
 ## PT_BR
 
