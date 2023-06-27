@@ -2,36 +2,37 @@
 
 ## EN_US
 
-Goals:
-:white_check_mark: Data collection for a specific match.
-:white_check_mark: Data collection for a character.
-:white_check_mark: Collection of matches happening on a given day.
-:white_check_mark: Collection of performance information for a specific player.
-:white_large_square: Comparison of damage potential between a specific team and another for the match.
-:white_large_square: Interface to select a live match.
-:white_large_square: Interface to view game information.
+## Goals:
+:white_check_mark: Data collection for a specific match.<br>
+:white_check_mark: Data collection for a character.<br>
+:white_check_mark: Collection of matches happening on a given day.<br>
+:white_check_mark: Collection of performance information for a specific player.<br>
+:white_large_square: Comparison of damage potential between a specific team and another for the match.<br>
+:white_large_square: Interface to select a live match.<br>
+:white_large_square: Interface to view game information.<br>
 
-Disclaimer:
+## Disclaimer:
 This project is being developed based on the principles of Domain Driven Design (DDD) project architecture and utilizes patterns such as Dependency Injection and Dependency Inversion. The primary objective is to enhance understanding of advanced topics in software development.
 
 The use of the DDD model allows the code to be organized into different layers, such as the domain, application, and infrastructure layers, which facilitates project maintenance and scalability. Additionally, the use of patterns like Dependency Injection and Dependency Inversion helps reduce coupling between classes and promotes code reusability.
 
 It is important to note that this project is a personal initiative for learning and professional improvement. The code and structure presented here may not always represent the best practices, and it is recommended to analyze and adapt these techniques according to the specific needs of each project.
 
-Topics covered in the project:
+## Topics covered in the project:
 
-Object-Oriented Programming (OOP)
-DataClasses
-REST API
-Web Scraping
-Dependency Injection
-Dependency Inversion
-Kivy Language (KvLang)
-Domain Driven Design (DDD)
-Interfaces
-Repositories
-Functional Programming
+- Object-Oriented Programming (OOP)
+- DataClasses
+- REST API
+- Web Scraping
+- Dependency Injection
+- Dependency Inversion
+- Kivy Language (KvLang)
+- Domain Driven Design (DDD)
+- Interfaces
+- Repositories
+- Functional Programming
 
+# B3tBurner
 
 ## PT_BR
 
