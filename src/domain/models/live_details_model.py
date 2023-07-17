@@ -38,5 +38,5 @@ class LiveDetailsParticipantModel:
 
 @dataclass
 class LiveDetailsModel:
-    frames: str
+    frames: dict
 

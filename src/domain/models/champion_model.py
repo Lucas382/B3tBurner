@@ -1,12 +1,29 @@
 from dataclasses import dataclass
-from typing import List
+from typing import List, Optional
 
 
 @dataclass
 class Stats:
-    attackdamage: str
-    armor: str
-    spellblock: str
+    hp: int
+    hpperlevel: int
+    mp: int
+    mpperlevel: int
+    movespeed: int
+    armor: int
+    armorperlevel: float
+    spellblock: int
+    spellblockperlevel: float
+    attackrange: int
+    hpregen: float
+    hpregenperlevel: float
+    mpregen: int
+    mpregenperlevel: int
+    crit: int
+    critperlevel: int
+    attackdamage: int
+    attackdamageperlevel: float
+    attackspeedperlevel: float
+    attackspeed: float
 
 
 @dataclass
@@ -24,6 +41,13 @@ class Image:
     y: int
     w: int
     h: int
+
+
+@dataclass
+class SpellStats:
+    damage: Optional[List]
+    affinity_percent: dict
+
 
 
 @dataclass
@@ -48,6 +72,7 @@ class Spell:
     rangeBurn: str
     image: Image
     resource: str
+    stats: Optional[SpellStats] = None
 
 
 @dataclass(init=False)
@@ -61,3 +86,5 @@ class ChampionModel:
     spell_r: Spell
     stats: Stats
 
+    def __post_init__(self):
+        self.stats = Stats(**self.stats)

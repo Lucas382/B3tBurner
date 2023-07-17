@@ -1,7 +1,6 @@
 from dataclasses import dataclass
 
-def teste():
-    print("teste")
+
 @dataclass()
 class LiveStatusModel:
 
