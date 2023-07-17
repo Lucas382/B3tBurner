@@ -1,8 +1,44 @@
+import re
+
 import requests
 from src.domain.models.champion_base_model import ChampionBaseModel
-from src.domain.models.champion_model import ChampionModel, Spell
+from src.domain.models.champion_model import ChampionModel, Spell, Stats, SpellStats
+from src.infrastructure.scraping.champion_scraper import ChampionScraper
+
 
 class ChampionService:
+
+    @classmethod
+    def get_champion_information(cls, champion_name: str, level: int):
+        # TODO: Metodo possui ineficiencia para campeões com habilidades especificas como R da karma e R do Sylas.
+        # TODO: Alterado classe SpellSts para ter mais attrs, alterar esse metodo para corresponder ao novo modelo.
+        """
+        Returns a ChampionModel object with information about the champion.
+        :param champion_name: The name of the champion.
+        :param level: The level of the champion.
+        :return: A ChampionModel object.
+        """
+        spells = {}
+
+        passive = None
+        spell_info = ChampionScraper().get_champion_spell_information(champion_name.capitalize())
+
+        for key, value in spell_info.items():
+            if value and key != 'passive':
+                s_damage = value[0][level - 1]
+                s_type = re.search(r'([A-Z]+)', value[1][0]).group()
+                s_affinity_percent = {s_type: re.search(r'(\d+)', value[1][0]).group()}
+                if len(value) > 2 and len(value[2]) > 0:
+                    aditional_type = re.search(r'([A-Z]+)', value[2][0]).group() if re.search(r'([A-Z]+)', value[2][0]) else 'tmp' # TODO: Adicionar um objeto para lidar com os tipos de dano
+                    s_affinity_percent[aditional_type] = re.search(r'(\d+)', value[2][0]).group()
+
+                spells[key] = SpellStats(damage=s_damage, affinity_percent=s_affinity_percent)
+            else:
+                spells[key] = SpellStats(damage=0, affinity_percent={})
+                passive = spell_info['passive']
+        return passive, spells
+
+
     @classmethod
     def get_champion_information_list(cls, champions_names):
         """
@@ -44,6 +80,7 @@ class ChampionService:
                 except:
                     pass
 
+            champion_instance.stats = Stats(**champion_data_name['stats'])
             champion_instance_list.append(champion_instance)
 
         return champion_instance_list

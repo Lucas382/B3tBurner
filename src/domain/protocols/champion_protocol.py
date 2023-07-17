@@ -5,5 +5,9 @@ from src.domain.models.champion_model import ChampionModel
 
 
 class ChampionServiceProtocol(Protocol):
+
+    def get_champion_information(cls, champion_name: str):
+        ...
+
     def get_champion_information_list(self, champions_names: List[str]) -> List[ChampionModel]:
         ...

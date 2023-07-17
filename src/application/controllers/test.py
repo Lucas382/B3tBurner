@@ -1,19 +1,42 @@
-from src.infrastructure.data.repositories.team_gold_repository import TeamGoldRepository
-from src.infrastructure.data.repositories.team_gold_repository2 import TeamGoldRepository2
-from src.domain.protocols.team_gold_protocol import TeamGoldProtocol
+# from src.infrastructure.data.repositories.team_gold_repository import TeamGoldRepository
+# from src.infrastructure.data.repositories.team_gold_repository2 import TeamGoldRepository2
+# from src.domain.protocols.team_gold_protocol import TeamGoldProtocol
 
 
-def print_team_info(team: TeamGoldProtocol) -> None:
-    player_name = team.get_player_name()
-    team_gold = team.get_team_gold()
+import requests
 
-    print(f"Player name: {player_name}")
-    print(f"Team gold: {team_gold}")
+url = "https://leagueoflegends.fandom.com/wiki/Ahri/LoL"
+
+# Send a GET request to the URL
+response = requests.get(url)
+
+# Check if the request was successful (status code 200)
+if response.status_code == 200:
+    # Access the HTML content
+    html_content = response.text
+    print(html_content)
+else:
+    print("Failed to retrieve HTML content. Status code:", response.status_code)
 
 
-repository = TeamGoldRepository()
-repository2 = TeamGoldRepository2()
-print_team_info(repository2)
+
+
+
+# string = "spell_vexq_tooltip" #70ad6d3fc2
+# print(fnv1a32_hash(string))
+
+
+# def print_team_info(team: TeamGoldProtocol) -> None:
+#     player_name = team.get_player_name()
+#     team_gold = team.get_team_gold()
+#
+#     print(f"Player name: {player_name}")
+#     print(f"Team gold: {team_gold}")
+#
+#
+# repository = TeamGoldRepository()
+# repository2 = TeamGoldRepository2()
+# print_team_info(repository2)
 
 # now = datetime.utcnow()
 # rounded_seconds = (now.second // 10) * 10
